@@ -27,15 +27,7 @@ Add the following extension to your IWebHostBuilder in Program.cs:
 .ConfigureServices(UnsignedHttpClientBuilder.Resolve)
 ```
 
-You can overwrite the primary HttpClientHandler of all clients with the following code block:
-```csharp
-serviceCollection.AddTransient<HttpClientHandler, UnsignedCertificateHttpClientHandler>();
-```
-
-:warning: Warning: It does not have an effect on the default/unnamed http clients. Also not affected
-are http clients where we explicitely configure a different primary handler.
-
-You can create a specific http client by using the follwoing code:
+Afterwards you can create a specific http client by using the following code:
 ```csharp
 var client = HttpClientFactory.CreateClient(HttpClientNames.UnsignedHttpClient);
 ```
