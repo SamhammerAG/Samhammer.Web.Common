@@ -9,5 +9,6 @@ env:
     - ASPNETCORE_ENVIRONMENT="Production"
     - PATH="$PATH:/home/travis/.dotnet/tools"
 script:
+ - cd src
  - dotnet restore
  - dotnet build 
