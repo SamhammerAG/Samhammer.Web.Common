@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SamhammerAG/Samhammer.Web.Common.svg?branch=master)](https://travis-ci.org/SamhammerAG/Samhammer.Web.Common)
+﻿[![Build Status](https://travis-ci.org/SamhammerAG/Samhammer.Web.Common.svg?branch=master)](https://travis-ci.org/SamhammerAG/Samhammer.Web.Common)
 
 ## Samhammer.Web.Common
 
@@ -10,8 +10,13 @@ It provides functionality that can be used in every web API project that is buil
 
 ## Available Features
 
-#### Get your project version
-You get a version endpoint /api/version that prints out your assembly version and the hosting environment of the project. This feature can't be disabled at the moment.
+#### Version endpoint
+If it is enabled you get an endpoint "/version" and "/api/version" that returns a json with the version number of the entry assembly and the hosting environment.
+
+Add the following to the method Configure of your Startup.cs to enable it:
+```csharp
+app.UseVersion();
+```
 
 #### Ping endpoint
 If it is enabled you get an endpoint "/ping" that just returns "OK".
