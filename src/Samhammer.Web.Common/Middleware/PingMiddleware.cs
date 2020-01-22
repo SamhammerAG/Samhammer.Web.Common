@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Samhammer.Web.Common.Middleware.Options;
 
 namespace Samhammer.Web.Common.Middleware
 {
@@ -7,14 +8,17 @@ namespace Samhammer.Web.Common.Middleware
     {
         private RequestDelegate Next { get; }
 
-        public PingMiddleware(RequestDelegate next)
+        private EndpointOptions EndpointOptions { get; }
+
+        public PingMiddleware(RequestDelegate next, EndpointOptions endpointOptions)
         {
             Next = next;
+            EndpointOptions = endpointOptions;
         }
 
         public async Task InvokeAsync(HttpContext context)
         {
-            if (context.Request.Path.StartsWithSegments("/ping"))
+            if (context.Request.Path.StartsWithSegments(EndpointOptions.Path))
             {
                 await context.Response.WriteAsync("OK");
             }

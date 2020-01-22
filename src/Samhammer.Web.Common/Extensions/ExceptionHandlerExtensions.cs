@@ -9,7 +9,7 @@ namespace Samhammer.Web.Common.Extensions
         {
             app.UseExceptionHandler(new ExceptionHandlerOptions
             {
-                ExceptionHandler = (context) => Task.CompletedTask
+                ExceptionHandler = (context) => Task.CompletedTask,
             });
 
             return app;

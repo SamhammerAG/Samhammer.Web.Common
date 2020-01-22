@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Routing;
+using Samhammer.Web.Common.Middleware.Options;
 
 namespace Samhammer.Web.Common.Middleware
 {
@@ -12,15 +13,17 @@ namespace Samhammer.Web.Common.Middleware
     {
         private RequestDelegate Next { get; }
 
-        public VersionMiddleware(RequestDelegate next)
+        private EndpointOptions EndpointOptions { get; }
+
+        public VersionMiddleware(RequestDelegate next, EndpointOptions endpointOptions)
         {
             Next = next;
+            EndpointOptions = endpointOptions;
         }
 
         public async Task InvokeAsync(HttpContext context, IHostingEnvironment env)
         {
-            if (context.Request.Path.StartsWithSegments("/version")
-                || context.Request.Path.StartsWithSegments("/api/version"))
+            if (context.Request.Path.StartsWithSegments(EndpointOptions.Path))
             {
                 await WriteVersionResponse(context, env.EnvironmentName);
             }
