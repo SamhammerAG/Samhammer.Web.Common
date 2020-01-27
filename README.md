@@ -31,7 +31,7 @@ If it is enabled you get an http client that also accepts untrusted certificates
 
 Add the following extension to your IWebHostBuilder in Program.cs:
 ```csharp
-.ConfigureServices(UnsignedHttpClientBuilder.Resolve)
+.AddUnsignedHttpClient()
 ```
 
 Afterwards you can create a specific http client by using the following code:

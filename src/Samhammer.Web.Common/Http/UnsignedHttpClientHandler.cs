@@ -4,9 +4,9 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Samhammer.Web.Common.Http
 {
-    public class UnsignedCertificateHttpClientHandler : HttpClientHandler
+    public class UnsignedHttpClientHandler : HttpClientHandler
     {
-        public UnsignedCertificateHttpClientHandler()
+        public UnsignedHttpClientHandler()
         {
             ServerCertificateCustomValidationCallback += ValidateCertificate;
         }
