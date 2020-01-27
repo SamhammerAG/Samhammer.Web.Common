@@ -8,7 +8,7 @@
     <PackageProjectUrl>https://github.com/SamhammerAG/Samhammer.Web.Common/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/SamhammerAG/Samhammer.Web.Common/</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/SamhammerAG/Samhammer.Web.Common/blob/master/LICENSE</PackageLicenseUrl>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
