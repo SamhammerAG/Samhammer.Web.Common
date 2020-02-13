@@ -1,4 +1,4 @@
-﻿[![Build Status](https://travis-ci.org/SamhammerAG/Samhammer.Web.Common.svg?branch=master)](https://travis-ci.org/SamhammerAG/Samhammer.Web.Common)
+﻿[![Build Status](https://travis-ci.com/SamhammerAG/Samhammer.Web.Common.svg?branch=master)](https://travis-ci.com/SamhammerAG/Samhammer.Web.Common)
 
 ## Samhammer.Web.Common
 
