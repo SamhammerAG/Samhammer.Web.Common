@@ -21,7 +21,7 @@ namespace Samhammer.Web.Common.Middleware
             EndpointOptions = endpointOptions;
         }
 
-        public async Task InvokeAsync(HttpContext context, IHostingEnvironment env)
+        public async Task InvokeAsync(HttpContext context, IWebHostEnvironment env)
         {
             if (context.Request.Path.StartsWithSegments(EndpointOptions.Path))
             {
