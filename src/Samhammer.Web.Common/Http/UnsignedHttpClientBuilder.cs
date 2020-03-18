@@ -1,24 +1,15 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
+using Microsoft.Extensions.DependencyInjection;
+using Samhammer.Web.Common.Extensions;
 
 namespace Samhammer.Web.Common.Http
 {
+    [Obsolete("use UnsignedHttpClientExtensions instead")]
     public class UnsignedHttpClientBuilder
     {
         public static void Resolve(IServiceCollection serviceCollection)
         {
-            // Generic client
-            serviceCollection.AddHttpClient();
-
-            AddUnsignedHttpClient(serviceCollection);
-        }
-
-        private static void AddUnsignedHttpClient(IServiceCollection serviceCollection)
-        {
-            serviceCollection.AddTransient<UnsignedHttpClientHandler>();
-
-            serviceCollection
-                .AddHttpClient(HttpClientNames.UnsignedHttpClient)
-                .ConfigurePrimaryHttpMessageHandler(sp => sp.GetService<UnsignedHttpClientHandler>());
+            serviceCollection.AddUnsignedHttpClient();
         }
     }
 }
