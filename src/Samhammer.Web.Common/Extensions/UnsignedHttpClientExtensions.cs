@@ -19,5 +19,11 @@ namespace Samhammer.Web.Common.Extensions
                 .AddHttpClient(HttpClientNames.UnsignedHttpClient)
                 .ConfigurePrimaryHttpMessageHandler(sp => sp.GetService<UnsignedHttpClientHandler>());
         }
+
+        public static IHttpClientBuilder AddAllowUnsignedPrimaryHandler(this IHttpClientBuilder clientBuilder)
+        {
+            clientBuilder.ConfigurePrimaryHttpMessageHandler(sp => sp.GetService<UnsignedHttpClientHandler>());
+            return clientBuilder;
+        }
     }
 }

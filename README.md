@@ -39,6 +39,12 @@ Afterwards you can create a specific http client by using the following code:
 var client = HttpClientFactory.CreateClient(HttpClientNames.UnsignedHttpClient);
 ```
 
+Furthermore you can allow self  signed certs for an existing http client with the following block added to your IHttpClientBuilder:
+
+```csharp
+.AddAllowUnsignedPrimaryHandler()
+```
+
 #### Exception handling
 If you don't want to get error messages in your json api you can enable a default exception handler.
 
