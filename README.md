@@ -1,5 +1,3 @@
-﻿[![Build Status](https://travis-ci.com/SamhammerAG/Samhammer.Web.Common.svg?branch=master)](https://travis-ci.com/SamhammerAG/Samhammer.Web.Common)
-
 ## Samhammer.Web.Common
 
 This is a collection of tools to make creation of web projects simpler.
